@@ -2,10 +2,10 @@
 
 Drawing a face for a suspect just based on the descriptions of the eyewitnesses is a difficult task. There are some state-of-the-art methods in generating face images from text, but there is still a lot of room for improvement in similarity between input text and generated images. Here, we want to go even further and generate sketches rather than a RGB image.
 
-We want to leverage two different models in order to produce sketches from text. To obtain an image of a face from a description, we are using DCGAN. Then, we can use CycleGAN to produce a sketch given an image of a face.
+We want to leverage two different models in order to produce sketches from text. To obtain an image of a face from a description, we are using Text-To-Image Synthesis with DCGAN. Then, we can use CycleGAN to produce a sketch given an image of a face.
 
 The original repos we used can be found here:\
-[DCGAN](https://github.com/zsdonghao/text-to-image)\
+[Text-To-Image](https://github.com/zsdonghao/text-to-image)\
 [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
 ## Getting Started
@@ -24,7 +24,7 @@ cd 11785-Text-to-Sketch/text-to-image
   - For pip users, please type the command `pip install -r pytorch-CycleGAN-and-pix2pix/requirements.txt`.
   - For Conda users, you can create a new Conda environment using `conda env create -f pytorch-CycleGAN-and-pix2pix/environment.yml`.
 
-### DCGAN train/test
+### Text-To-Image DCGAN train/test
 1. Change to correct directory:
     ```bash
     cd text-to-image
@@ -65,5 +65,3 @@ cd 11785-Text-to-Sketch/text-to-image
 For more detailed descriptions of Text-to-Image(DCGAN) and Image-to-Image translation (CycleGAN), please refer to their READMEs:\
 [Text-to-Image](text-to-image/README.md)\
 [Image-to-Image Translation](pytorch-CycleGAN-and-pix2pix/README.md)
-
-
