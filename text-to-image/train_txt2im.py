@@ -162,7 +162,6 @@ def main_train():
     print_freq = 1
     n_batch_epoch = int(n_images_train / batch_size)
     # exit()
-    print("Epochs are starting...")
     for epoch in range(0, n_epoch+1):
         start_time = time.time()
 
@@ -175,7 +174,6 @@ def main_train():
         elif epoch == 0:
             log = " ** init lr: %f  decay_every_epoch: %d, lr_decay: %f" % (lr, decay_every, lr_decay)
             print(log)
-        print("Doing a batch...")
         for step in range(n_batch_epoch):
             step_time = time.time()
             ## get matched text
@@ -222,7 +220,6 @@ def main_train():
 
             print("Epoch: [%2d/%2d] [%4d/%4d] time: %4.4fs, d_loss: %.8f, g_loss: %.8f, rnn_loss: %.8f" \
                         % (epoch, n_epoch, step, n_batch_epoch, time.time() - step_time, errD, errG, errRNN))
-        print("After batch...")
         if (epoch + 1) % print_freq == 0:
             print(" ** Epoch %d took %fs" % (epoch, time.time()-start_time))
             img_gen, rnn_out = sess.run([net_g.outputs, net_rnn.outputs], feed_dict={
