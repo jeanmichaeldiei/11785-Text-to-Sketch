@@ -13,7 +13,7 @@ Image Source : [Generative Adversarial Text-to-Image Synthesis][2] Paper
 - [NLTK][8] : for tokenizer
 
 ## Datasets
-- The model is currently trained on the [flowers dataset][9]. Download the images from [here][9] and save them in ```102flowers/102flowers/*.jpg```. Also download the captions from [this link][10]. Extract the archive, copy the ```text_c10``` folder and paste it in ```102flowers/text_c10/class_*```.  
+- The model is currently trained on the [flowers dataset][9]. Download the images from [here][9]. Also download the captions from [this link][10]. Extract the archive, copy the ```text_c10``` folder. Put the extracted folders in the main text-to-image directory.  
 
 **N.B**  You can downloads all data files needed manually or simply run the downloads.py and put the correct files to the right directories.
 ```python 
