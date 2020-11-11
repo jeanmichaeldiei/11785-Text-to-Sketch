@@ -4,7 +4,7 @@ Drawing a face for a suspect just based on the descriptions of the eyewitnesses 
 
 We want to leverage two different models in order to produce sketches from text. To obtain an image of a face from a description, we are using DCGAN. Then, we can use CycleGAN to produce a sketch given an image of a face.
 
-The original repos we used can be found here:
+The original repos we used can be found here:\
 [DCGAN](https://github.com/zsdonghao/text-to-image)\
 [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
@@ -62,7 +62,7 @@ cd 11785-Text-to-Sketch/text-to-image
 - The test results will be saved to a html file here: `./results/face2sketch/latest_test/index.html`.
 
 # NOTE:
-For more detailed descriptions of Text-to-Image(DCGAN) and Image-to-Image translation (CycleGAN), please refer to their READMEs:
+For more detailed descriptions of Text-to-Image(DCGAN) and Image-to-Image translation (CycleGAN), please refer to their READMEs:\
 [Text-to-Image](text-to-image/README.md)\
 [Image-to-Image Translation](pytorch-CycleGAN-and-pix2pix/README.md)
 
