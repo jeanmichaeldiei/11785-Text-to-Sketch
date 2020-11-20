@@ -1,0 +1,35 @@
+certifi==2020.11.8
+cffi @ file:///D:/bld/cffi_1602537397014/work
+cloudpickle @ file:///home/conda/feedstock_root/build_artifacts/cloudpickle_1598400192773/work
+cycler==0.10.0
+cytoolz==0.11.0
+dask @ file:///home/conda/feedstock_root/build_artifacts/dask-core_1602029610262/work
+decorator==4.4.2
+easydict==1.9
+imagecodecs @ file:///D:/bld/imagecodecs_1602637505924/work
+imageio @ file:///home/conda/feedstock_root/build_artifacts/imageio_1594044661732/work
+kiwisolver @ file:///D:/bld/kiwisolver_1604322572980/work
+matplotlib==2.2.5
+mkl-service==2.3.0
+networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1598210780226/work
+nltk==3.4.4
+numpy @ file:///D:/bld/numpy_1604946136447/work
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+pandas @ file:///D:/bld/pandas_1604166721304/work
+Pillow @ file:///D:/bld/pillow_1604749014518/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1604321279890/work
+PyWavelets @ file:///D:/bld/pywavelets_1602504625647/work
+PyYAML==5.3.1
+scikit-image==0.17.2
+scipy @ file:///C:/bld/scipy_1604304921754/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+tifffile @ file:///home/conda/feedstock_root/build_artifacts/tifffile_1593913740982/work
+toolz @ file:///home/conda/feedstock_root/build_artifacts/toolz_1600973991856/work
+torch==1.4.0
+torchfile==0.1.0
+torchvision==0.5.0
+tornado @ file:///D:/bld/tornado_1604105157725/work
+wincertstore==0.2
