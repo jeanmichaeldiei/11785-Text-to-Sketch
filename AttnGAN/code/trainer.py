@@ -495,6 +495,8 @@ class condGANTrainer(object):
                     cap_lens_np = cap_lens.cpu().data.numpy()
                     for j in range(batch_size):
                         save_name = '%s/%d_s_%d' % (save_dir, i, sorted_indices[j])
+                        print("Saved to:",save_dir)
+
                         for k in range(len(fake_imgs)):
                             im = fake_imgs[k][j].data.cpu().numpy()
                             im = (im + 1.0) * 127.5
