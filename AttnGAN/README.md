@@ -1,6 +1,6 @@
 # AttnGAN Text-to-Sketch
 
-The original repo we used can be found here:
+The original repo of AttnGAN can be found here:
 [AttnGAN](https://github.com/taoxugit/AttnGAN)
 
 ### AttnGAN-CelebA train/test
