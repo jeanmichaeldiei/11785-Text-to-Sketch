@@ -59,6 +59,7 @@ def prepare_data(data):
 def get_imgs(img_path, imsize, bbox=None,
              transform=None, normalize=None):
     img = Image.open(img_path).convert('RGB')
+    img = img.resize((128,128)) #256 -> 128
     width, height = img.size
     if bbox is not None:
         r = int(np.maximum(bbox[2], bbox[3]) * 0.75)

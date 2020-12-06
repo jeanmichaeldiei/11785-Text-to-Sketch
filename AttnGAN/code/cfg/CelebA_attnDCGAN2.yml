@@ -5,7 +5,6 @@ DATA_DIR: '../data/CelebA'
 GPU_ID: 0
 WORKERS: 2
 
-B_VALIDATION: False
 TREE:
     BRANCH_NUM: 3
 
@@ -32,7 +31,7 @@ GAN:
     DF_DIM: 64
     GF_DIM: 32
     Z_DIM: 100
-    R_NUM: 2
+    R_NUM: 0
     B_DCGAN: True
 
 TEXT:

@@ -484,8 +484,6 @@ class G_DCGAN(nn.Module):
             :param mask: batch x seq_len
             :return:
         """
-        print(mask.dtype,"G_DCGAN")
-
         att_maps = []
         c_code, mu, logvar = self.ca_net(sent_emb)
         if cfg.TREE.BRANCH_NUM > 0:
@@ -500,7 +498,6 @@ class G_DCGAN(nn.Module):
                 att_maps.append(att2)
 
         fake_imgs = self.img_net(h_code)
-        print("end G_DCGAN")
         return [fake_imgs], att_maps, mu, logvar
 
 

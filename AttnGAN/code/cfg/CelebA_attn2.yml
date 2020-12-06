@@ -3,7 +3,7 @@ CONFIG_NAME: 'attn2'
 DATASET_NAME: 'CelebA'
 DATA_DIR: '../data/CelebA'
 GPU_ID: 0
-WORKERS: 2
+WORKERS: 4
 
 
 TREE:
@@ -14,8 +14,8 @@ TRAIN:
     FLAG: True
     NET_G: ''  # '../models/bird_AttnGAN2.pth'
     B_NET_D: True
-    BATCH_SIZE: 20  # 20  22
-    MAX_EPOCH: 600  # 600
+    BATCH_SIZE: 10 # 20
+    MAX_EPOCH: 600
     SNAPSHOT_INTERVAL: 1
     DISCRIMINATOR_LR: 0.0002
     GENERATOR_LR: 0.0002
