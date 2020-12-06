@@ -6,7 +6,7 @@ The original repo we used can be found here:
 ### AttnGAN-CelebA train/test
 1. Put images of sketches in `AttnGAN/data/CelebA/images`
 2. Put corresponding text of sketches in `AttnGAN/data/CelebA/text` as folders
-3. Fill out `code/cfg/CelebA_attn2.yml` as necessary
+3. Fill out `code/cfg/CelebA_attn2.yml` as necessary with proper directory paths and model sizes
 3. Change to correct directory:
     ```bash
     cd AttnGAN/code/
