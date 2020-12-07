@@ -6,22 +6,23 @@ The original repo of AttnGAN can be found here:
 ### AttnGAN-CelebA train/test
 1. Put images of sketches in `AttnGAN/data/CelebA/images`
 2. Put corresponding text of sketches in `AttnGAN/data/CelebA/text` as folders
-3. Fill out `code/cfg/CelebA_attn2.yml` as necessary with proper directory paths and model sizes
-3. Change to correct directory:
+3. Put rest of necessary files in `AttnGAN/data/CelebA/`. Files from: https://cmu.app.box.com/folder/127508082472
+4. Fill out `code/cfg/CelebA_attn2.yml` as necessary with proper directory paths and model sizes
+5. Change to correct directory:
     ```bash
     cd AttnGAN/code/
     ```
-4. Pre-train DAMSM (encoder) models:
+6. Pre-train DAMSM (encoder) models:
     ```bash
      python pretrain_DAMSM.py --cfg cfg/DAMSM/CelebA.yml --gpu 0
     ```
-5. Train a model:
+7. Train a model:
     ```bash
     python main.py --cfg cfg/CelebA_attn2.yml --gpu 0
     ```
 - To see more intermediate results (generated testimages and models), check out `AttnGAN/output/CelebA_attn2_<datatime>/`.
     
-5. Perform inference on a model with proper `cfg/eval_CelebA.yml` (put in correct paths to NET_G and NET_E):
+8. Perform inference on a model with proper `cfg/eval_CelebA.yml` (put in correct paths to NET_G and NET_E):
     ```bash
     python main.py --cfg cfg/eval_CelebA.yml --gpu 0
     ```
