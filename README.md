@@ -2,10 +2,10 @@
 
 Drawing a face for a suspect just based on the descriptions of the eyewitnesses is a difficult task. There are some state-of-the-art methods in generating face images from text, but there is still a lot of room for improvement in similarity between input text and generated images. Here, we want to go even further and generate sketches rather than a RGB image.
 
-We want to leverage two different models in order to produce sketches from text. To obtain an image of a face from a description, we are using Text-To-Image Synthesis with DCGAN. Then, we can use CycleGAN to produce a sketch given an image of a face.
+Since there are not many datasets to work off of, we used CycleGAN to create an artificial dataset of sketes. We then used AttnGAN to perform text-to-Sketch generation.
 
 The original repos we used can be found here:\
-[Text-To-Image](https://github.com/zsdonghao/text-to-image)\
+[AttnGAN](https://github.com/taoxugit/AttnGAN)\
 [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
 
 ## Getting Started
@@ -14,33 +14,40 @@ The original repos we used can be found here:\
 - Clone this repo:
 ```bash
 git clone https://github.com/jeanmichaeldiei/11785-Text-to-Sketch
-cd 11785-Text-to-Sketch/text-to-image
 ```
 - The DCGAN and CycleGAN implementations **require** two separate environments because the dependencies clash.
 - Install DCGAN dependencies:
-  - For pip users, please type the command `pip install -r text-to-image/requirements.txt`.
-  - For Conda users, you can create a new Conda environment using `conda env create -f text-to-image/environment.yml`.
+  - For pip users, please type the command `pip install -r AttnGAN/requirements.txt`.
+  - For Conda users, you can create a new Conda environment using `conda env create -f AttnGAN/environment.yml`.
 - Install CycleGAN dependencies (e.g., torchvision, [visdom](https://github.com/facebookresearch/visdom) and [dominate](https://github.com/Knio/dominate)):
   - For pip users, please type the command `pip install -r pytorch-CycleGAN-and-pix2pix/requirements.txt`.
   - For Conda users, you can create a new Conda environment using `conda env create -f pytorch-CycleGAN-and-pix2pix/environment.yml`.
 
-### Text-To-Image DCGAN train/test
-1. Change to correct directory:
+### AttnGAN-CelebA train/test
+1. Put images of sketches in `AttnGAN/data/CelebA/images`
+2. Put corresponding text of sketches in `AttnGAN/data/CelebA/text` as folders
+3. Put rest of necessary files in `AttnGAN/data/CelebA/`. Files from: https://cmu.app.box.com/folder/127508082472
+4. Fill out `code/cfg/CelebA_attn2.yml` as necessary with proper directory paths and model sizes
+5. Change to correct directory:
     ```bash
-    cd text-to-image
+    cd AttnGAN/code/
     ```
-2. Download all necessary files for text to Flowers
+6. Pre-train DAMSM (encoder) models:
     ```bash
-    python downloads.py
-    ``` 
-3. Process the data:
+     python pretrain_DAMSM.py --cfg cfg/DAMSM/CelebA.yml --gpu 0
+    ```
+7. Train a model:
     ```bash
-    python data_loader.py
-    ``` 
-4. Train the model
+    python main.py --cfg cfg/CelebA_attn2.yml --gpu 0
+    ```
+- To see more intermediate results (generated testimages and models), check out `AttnGAN/output/CelebA_attn2_<datatime>/`.
+    
+8. Perform inference on a model with proper `cfg/eval_CelebA.yml` (put in correct paths to NET_G and NET_E):
     ```bash
-    python train_txt2im.py
-    ``` 
+    python main.py --cfg cfg/eval_CelebA.yml --gpu 0
+    ```
+- The test results will be saved to a folder in the same path as NET_G.
+
 ### CycleGAN train/test
 1. Put images of faces in pytorch-CycleGAN-and-pix2pix/datasets/face2sketch/trainA
 2. Put images of sketches in pytorch-CycleGAN-and-pix2pix/datasets/face2sketch/trainB
@@ -62,6 +69,6 @@ cd 11785-Text-to-Sketch/text-to-image
 - The test results will be saved to a html file here: `./results/face2sketch/latest_test/index.html`.
 
 # NOTE:
-For more detailed descriptions of Text-to-Image(DCGAN) and Image-to-Image translation (CycleGAN), please refer to their READMEs:\
-[Text-to-Image](text-to-image/README.md)\
+For more detailed descriptions of AttnGAN and Image-to-Image translation (CycleGAN), please refer to their READMEs:\
+[AttnGAN](AttnGAN/README.md)\
 [Image-to-Image Translation](pytorch-CycleGAN-and-pix2pix/README.md)
