@@ -66,7 +66,7 @@ git clone https://github.com/jeanmichaeldiei/11785-Text-to-Sketch
     ```bash
     python test.py --dataroot ./datasets/face2sketch/testA --name face2sketch --model test --no_dropout --netG unet_256 --num_test 50
     ```
-- The test results will be saved to a html file here: `./results/face2sketch/latest_test/index.html`.
+- The test results will be saved saved at ./results/.
 
 # NOTE:
 For more detailed descriptions of AttnGAN and Image-to-Image translation (CycleGAN), please refer to their READMEs:\
